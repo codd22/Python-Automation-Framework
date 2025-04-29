@@ -1,4 +1,4 @@
-from playwright.sync_api import Page
+from playwright.sync_api import Page,Locator
 
 
 class BasePage:
@@ -7,3 +7,6 @@ class BasePage:
 
     def navigate(self, url: str):
         self.page.goto(url)
+
+    def getText(self, locator: Locator):
+        return locator.text_content()
