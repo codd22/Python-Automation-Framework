@@ -1,5 +1,6 @@
 import allure
 from playwright_configs.browser_config import launch_browser
+from tests.utils.page_config import configPages
 
 
 def before_all(context):
@@ -9,6 +10,7 @@ def before_all(context):
 def before_scenario(context, scenario):
     context.page = context.browser.new_page()
     context.page.set_default_timeout(10000)
+    configPages(context)
 
 
 def after_step(context, step):
