@@ -10,3 +10,6 @@ class BasePage:
 
     def getText(self, locator: Locator):
         return locator.text_content()
+
+    def clickOnElement(self, element: Locator):
+        element.click()
